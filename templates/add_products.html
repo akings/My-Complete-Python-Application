@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <script src="../static/bootstrap/js/jquery-3.4.0.js"></script>
+    <script src="../static/bootstrap/js/popper.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+</head>
+<body>
+ <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">eMobilis</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add_products">Add products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/view_product">View products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/view_users">View users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+ <h1 class="text-info text-center text-uppercase">Add Product</h1>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            {% with messages = get_flashed_messages()%}
+
+            {% for message in messages %}
+               <p class="text-info">{{ message }}</p>
+            {% endfor %}
+            {% endwith %}
+            <form action="" method="post">
+                <div class="form-group">
+                    <input name="jina" type="text" class="form-control" placeholder="Name">
+                </div>
+                 <div class="form-group">
+                    <input name="wingi" type="number" class="form-control" placeholder="Quantity">
+                 </div>
+                 <div class="form-group">
+                    <input name="bei" type="text" class="form-control" placeholder="Price">
+                 </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-info btn-block" value="ADD">
+                </div>
+                <a href="/home" class="btn btn-outline-success btn-block">Back</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
